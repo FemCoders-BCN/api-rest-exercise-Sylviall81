@@ -1,8 +1,12 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import logo from './assets/img/logo.svg';
+//import React, {useEffect, useState} from 'react';
+//import axios from 'axios';
 
 function App() {
+
+  
   return (
     <>
       <img className='logo' src={logo} alt="logo of the app" />
@@ -28,6 +32,8 @@ function App() {
           <li>Y lo último pero no menos importante, no te olvides de los tests.</li>
         </ol>
       </ul>
+
+      <img></img>
     </>
   );
 }
