@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import picturesData from '../../assets/data/picturesDB.json'
 import PictureObject from '../../components/pictureObject/PictureObject'
+import './PicturePage.css'
 
 function PicturesPage() {
 
@@ -24,17 +25,15 @@ function PicturesPage() {
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
 
-        <div className="container-view-curses">
+        <div className="container-photo-grid">
             {photoData && photoData.map((photo,id) => {
                 return (
                     
                     <PictureObject key={photo.id}
                         id={photo.id}
                         download_url={photo.download_url}
-                        author ={photo.autor}
+                        author ={photo.author}
                          />
-                   
-                    
                 )
             })}
             </div>

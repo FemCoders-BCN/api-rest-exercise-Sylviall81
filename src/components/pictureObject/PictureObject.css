@@ -10,14 +10,17 @@
 /*.container-image{} cuadro para la imagen*/
 
 .api-image{
-    width: 15vw;
+    width: 14vw;
     max-width: 100%;
-    margin: 4vh 4vw;
+    margin: 4vh 3vw;
     border-radius: 25px;;
 
 } 
 
-/*.text-container{} cuadro que encierra ambos textos: id y autor */
+.text-container{
+font-size: 1em;
+margin: 1em 2em;
+}
     
     
 /*.text-id {} clase del texto (p) del id de la foto*/

@@ -1,0 +1,5 @@
+.container-photo-grid{
+    display:flex;
+    flex-direction: row;
+
+}
