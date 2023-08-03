@@ -1,8 +1,7 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar';
-import logo from './assets/img/logo.svg';
-//import React, {useEffect, useState} from 'react';
-//import axios from 'axios';
+import logo from './assets/img/logo.svg'
+//import PictureObject from './components/pictureObject/PictureObject'
 
 function App() {
 
@@ -32,6 +31,7 @@ function App() {
           <li>Y lo último pero no menos importante, no te olvides de los tests.</li>
         </ol>
       </ul>
+      
     </>
   );
 }

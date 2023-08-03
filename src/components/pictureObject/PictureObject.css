@@ -9,7 +9,13 @@
 
 /*.container-image{} cuadro para la imagen*/
 
-/*.api-image{} clase de la imagen */
+.api-image{
+    width: 15vw;
+    max-width: 100%;
+    margin: 4vh 4vw;
+    border-radius: 25px;;
+
+} 
 
 /*.text-container{} cuadro que encierra ambos textos: id y autor */
     
