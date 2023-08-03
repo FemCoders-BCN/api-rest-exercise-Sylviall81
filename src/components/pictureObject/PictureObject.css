@@ -1,0 +1,20 @@
+
+.container-card{
+    border: solid #D64DD6 0.2px;
+    border-radius: 25px;
+    width: 20vw;
+    margin: 2.5vh 2.5vw;
+} 
+
+
+/*.container-image{} cuadro para la imagen*/
+
+/*.api-image{} clase de la imagen */
+
+/*.text-container{} cuadro que encierra ambos textos: id y autor */
+    
+    
+/*.text-id {} clase del texto (p) del id de la foto*/
+
+
+/*.text-author {} clase del texto de autor*/

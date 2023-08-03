@@ -32,8 +32,6 @@ function App() {
           <li>Y lo último pero no menos importante, no te olvides de los tests.</li>
         </ol>
       </ul>
-
-      <img></img>
     </>
   );
 }
