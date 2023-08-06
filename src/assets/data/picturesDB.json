@@ -1,4 +1,6 @@
 
+
+
 {
     "pictures": [{
             "id": 0,
@@ -15,9 +17,6 @@
           {
             "id": "21",
             "author": "Alejandro Escamilla",
-            "width": 3008,
-            "height": 2008,
-            "url": "https://unsplash.com/photos/jVb0mSn0LbE",
             "download_url": "https://picsum.photos/id/21/3008/2008"
           },
           

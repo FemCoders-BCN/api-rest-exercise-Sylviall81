@@ -1,16 +1,49 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import picturesData from '../../assets/data/picturesDB.json'
+/*import picturesData from '../../assets/data/picturesDB.json'*/
 import PictureObject from '../../components/pictureObject/PictureObject'
 import './PicturePage.css'
+import { LoremPicsumService } from '../../services/LoremPicsumService'
+
+
 
 function PicturesPage() {
+    const [photoDB, setPhotoDB] = useState(null);// los 30 objetos
+    //const arrayPhotoDB = [];
+    
 
-  let photoData = picturesData.pictures
-  console.log(photoData);
+    const picsumService = LoremPicsumService();
 
+    /*function respuestaOK (response) {
+            console.log(response);
+            setPhotoDB(response.data);
+           arrayPhotoDB = JSON.parse(response.data);
+
+            console.log(photoDB);
+        return arrayPhotoDB;
+    }*/
+
+
+    useEffect(() => {
+        picsumService.getAll()
+            /*.then(respuestaOK)*/
+            .then (function (response){
+                console.log(response);
+                setPhotoDB(JSON.stringify(response.data));
+            })
+            .catch(function (error) {    
+            console.log(error);
+            })
+            .finally(function () {
+
+            });
+        // El código aquí se ejecutará después de *cada* renderizado
+    }, []);
+
+   
   return (
     <main>
+
         <h2>Aquí estarán todos los objetos de la primera llamada</h2>
         <Navbar/>
         <ul>
@@ -26,16 +59,20 @@ function PicturesPage() {
         </ul>
 
         <div className="container-photo-grid">
-            {photoData && photoData.map((photo,id) => {
-                return (
-                    
-                    <PictureObject key={photo.id}
-                        id={photo.id}
-                        download_url={photo.download_url}
-                        author ={photo.author}
-                         />
-                )
-            })}
+
+           <p>{photoDB}</p>
+
+
+       {/*photoDB.map((photo) => (
+            <div key={photo.id}>
+                <p>ID: {photo.id}</p>
+             <p>Author: {photo.author}</p>
+             <img src= {photo.download_url} />
+       </div>
+       ))*/}
+
+        
+
             </div>
 
 
@@ -43,4 +80,4 @@ function PicturesPage() {
   )
 }
 
-export default PicturesPage
+export default PicturesPage 
