@@ -56,8 +56,7 @@ function PicturesPage() {
 
         <div className="container-photo-grid">
 
-           {/*<p>{photoDB}</p>*/}
-
+        
          {photoDB.map((photo) => (
             <PictureObject 
             key={photo.id} 

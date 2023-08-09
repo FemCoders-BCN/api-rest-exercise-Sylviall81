@@ -1,20 +1,21 @@
 import React, {useState, useEffect }from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import { LoremPicsumService } from '../../services/LoremPicsumService'
+import PictureObject from '../../components/pictureObject/PictureObject';
 
 
 function GrayscalePage() {
 
-  const [grayScaleImg, setGreyScaleImg] = useState([]);
+  const [grayScaleImg, setGrayScaleImg] = useState([]);
 
   const picsumService = LoremPicsumService();
 
 
   useEffect(() => {
-    picsumService.getRandomGrayscale(300)
+    picsumService.getRandomGrayscale('300')
         .then (function (response){
             console.log(response);
-            setGreyScaleImg(response.data);
+            setGrayScaleImg(response.data);
         })
         .catch(function (error) {    
         console.log(error);
@@ -40,13 +41,28 @@ function GrayscalePage() {
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
 
+        <div className="container-photo-grid">
 
 
-
-
-
-
+          <img></img>
+{/*
         
+                  {grayScaleImg.map((photo) => (
+                      <PictureObject 
+                          key={photo.id} 
+                          id= {photo.id} 
+                          author = {photo.author} 
+                          download_url= {photo.download_url} />
+
+                  ))}*/}
+
+</div>
+
+
+
+
+
+
     </main>
   )
 }

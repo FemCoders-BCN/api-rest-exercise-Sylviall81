@@ -16,7 +16,7 @@ export const LoremPicsumService = () => {
   //Los endpoints que tienen llaves con un texto dentro, quiere decir que le has de pasar algún valor /id/{image}/{size}, eso significa que image y size son valores que te dirá la documentación cómo se pasan.
   const urlGetById = '/id/{image}/{size}';
   //Construye la url para el tercer endpoint
-  const urlGetGrayscale = '/{size}?grayscale';
+  const urlGetGrayscale = '?grayscale';
 
 
   const getAll = () => {
@@ -32,7 +32,7 @@ export const LoremPicsumService = () => {
 
   const getRandomGrayscale = (size) => {
     //construye como sería el método de la petición para obtener una imagen aleatoria en escala de grises (apóyate en la documentación)
-    const response = axios.get(`${urlGetGrayscale}/${size}`);
+    const response = axios.get(`${size}${urlGetGrayscale}$`);
     return response;
   };
 
