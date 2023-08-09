@@ -1,5 +1,6 @@
 .container-photo-grid{
     display:flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
 
 }

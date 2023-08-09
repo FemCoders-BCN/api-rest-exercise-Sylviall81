@@ -59,7 +59,11 @@ function PicturesPage() {
            {/*<p>{photoDB}</p>*/}
 
          {photoDB.map((photo) => (
-            <PictureObject key={photo.id} id= {photo.id} author = {photo.author} download_url= {photo.download_url} />
+            <PictureObject 
+            key={photo.id} 
+            id= {photo.id} 
+            author = {photo.author} 
+            download_url= {photo.download_url} />
        
          ))}
 
