@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import PictureObject from '../../components/pictureObject/PictureObject'
 import { LoremPicsumService } from '../../services/LoremPicsumService'
-import './PicturePage.css'
+import './PicturesPage.css'
 
 
 

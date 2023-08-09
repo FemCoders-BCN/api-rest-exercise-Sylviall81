@@ -1,9 +1,9 @@
 import React from 'react';
-import "./PictureObject.css";
+import "./greyPictureObject.css";
 
 
     
-function PictureObject(props) {
+function GreyPictureObject(props) {
   
   return (
   
@@ -28,4 +28,4 @@ function PictureObject(props) {
 }
       
 
-export default PictureObject
+export default GreyPictureObject
