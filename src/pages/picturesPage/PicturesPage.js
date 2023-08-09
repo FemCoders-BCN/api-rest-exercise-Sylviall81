@@ -1,19 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../../components/navbar/Navbar'
-/*import picturesData from '../../assets/data/picturesDB.json'*/
 import PictureObject from '../../components/pictureObject/PictureObject'
-import './PicturePage.css'
 import { LoremPicsumService } from '../../services/LoremPicsumService'
+import './PicturePage.css'
+
 
 
 
 function PicturesPage() {
-    const [photoDB, setPhotoDB] = useState(null);// los 30 objetos
-    //const arrayPhotoDB = [];
     
-
+    const [photoDB, setPhotoDB] = useState([]);// los 30 objetos   
     const picsumService = LoremPicsumService();
-
     /*function respuestaOK (response) {
             console.log(response);
             setPhotoDB(response.data);
@@ -23,13 +20,12 @@ function PicturesPage() {
         return arrayPhotoDB;
     }*/
 
-
     useEffect(() => {
         picsumService.getAll()
-            /*.then(respuestaOK)*/
+           /* .then(respuestaOK)*/
             .then (function (response){
                 console.log(response);
-                setPhotoDB(JSON.stringify(response.data));
+                setPhotoDB(response.data);
             })
             .catch(function (error) {    
             console.log(error);
@@ -60,20 +56,14 @@ function PicturesPage() {
 
         <div className="container-photo-grid">
 
-           <p>{photoDB}</p>
+           {/*<p>{photoDB}</p>*/}
 
+         {photoDB.map((photo) => (
+            <PictureObject key={photo.id} id= {photo.id} author = {photo.author} download_url= {photo.download_url} />
+       
+         ))}
 
-       {/*photoDB.map((photo) => (
-            <div key={photo.id}>
-                <p>ID: {photo.id}</p>
-             <p>Author: {photo.author}</p>
-             <img src= {photo.download_url} />
-       </div>
-       ))*/}
-
-        
-
-            </div>
+         </div>
 
 
     </main>
@@ -81,3 +71,14 @@ function PicturesPage() {
 }
 
 export default PicturesPage 
+
+
+/*
+ {photoDB.map((photo) => (
+            <div key={photo.id}>
+                <p>ID: {photo.id}</p>
+             <p>Author: {photo.author}</p>
+             <img src= {photo.download_url} />
+       </div>
+         ))}
+         */
