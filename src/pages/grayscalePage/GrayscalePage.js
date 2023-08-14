@@ -1,8 +1,7 @@
 import React, {useState, useEffect }from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import { LoremPicsumService } from '../../services/LoremPicsumService'
-//import PictureObject from '../../components/pictureObject/PictureObject';
-
+import './GrayscalePage.css'
 
 function GrayscalePage() {
 
@@ -23,7 +22,7 @@ function GrayscalePage() {
         .finally(function () {
 
         });
-    // El código aquí se ejecutará después de *cada* renderizado
+    
 }, []);
 
 
@@ -41,9 +40,9 @@ function GrayscalePage() {
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
 
-        <div className="grey-scale-image-container">
+        <div className="gray-scale-image-container">
 
-        {grayScaleImg && <img src={grayScaleImg} alt="Grayscale" />}
+        {grayScaleImg && <img className= "gray-scale-image" src={grayScaleImg} alt="Grayscale" />}
 
           
 

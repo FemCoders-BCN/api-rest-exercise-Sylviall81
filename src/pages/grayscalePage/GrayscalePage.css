@@ -1,0 +1,12 @@
+.gray-scale-image-container{
+    margin: 10vh 25vw;
+    border: solid #D64DD6 0.2px;
+    border-radius: 25px;
+    width: 650px;
+    /*object-fit: cover;*/
+}
+
+.gray-scale-image{
+    margin: 18px 25px;
+    border-radius: 25px;
+}
