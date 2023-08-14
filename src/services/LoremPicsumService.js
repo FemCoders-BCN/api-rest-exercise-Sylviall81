@@ -19,6 +19,7 @@ export const LoremPicsumService = () => {
   const urlGetGrayscale = '?grayscale';
 
 
+
   const getAll = () => {
     const response = axios.get(urlGetAll);
     return response;
@@ -32,7 +33,7 @@ export const LoremPicsumService = () => {
 
   const getRandomGrayscale = (size) => {
     //construye como sería el método de la petición para obtener una imagen aleatoria en escala de grises (apóyate en la documentación)
-    const response = axios.get(`${size}${urlGetGrayscale}$`);
+    const response = axios.get(`/${size}${urlGetGrayscale}`);
     return response;
   };
 
