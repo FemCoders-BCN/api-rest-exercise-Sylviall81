@@ -1,0 +1,23 @@
+.image-by-id-container{
+    margin: 2vh 25vw;
+    border: solid #D64DD6 0.2px;
+    border-radius: 25px;
+    width: 450px;
+    height: 450px;
+    background-color: white;
+}
+
+.image-by-id{
+    margin: 18px 25px;
+    border-radius: 25px;
+}
+
+.intro-text{
+    margin: 3vh 5vw;
+}
+
+.title-text {
+
+    margin: 3vh 35vw;
+    font-weight:400;
+}

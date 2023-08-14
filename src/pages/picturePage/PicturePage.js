@@ -1,26 +1,66 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import PictureObject from '../../components/pictureObject/PictureObject'
+import React, { useState, useEffect } from "react";
+import Navbar from "../../components/navbar/Navbar";
+import { LoremPicsumService } from "../../services/LoremPicsumService";
+import "./PicturePage.css";
 
 function PicturePage() {
+  const picsumService = LoremPicsumService();
+  const [id, setId] = useState("");
+  const [imgById, setImgById] = useState("");
+  const [titleText, setTitleText] = useState("");
+
+  const imgSize = "400";
+
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+
+    picsumService
+      .getById(id, imgSize)
+      .then(function (response) {
+        console.log(response.data);
+        setImgById(response.request.responseURL);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [id, imgSize]);
+
   return (
     <main>
-        <h2>Aquí estará la imagen de la segunda llamada</h2>
-        <Navbar/>
-        <ul>
-            <p>INSTRUCCIONES</p>
-            <li>Crea los componentes que necesites para imprimir lo siguiente (siguiendo el ejemplo del componente PictureObject):</li>
-            <ol>
-                <li>La fotografía (queremos ver la imagen en nuestra app, no queremos la url),.</li>
-            </ol>
-            <li>Has de borrar estas instrucciones cuando lo tengas.</li>
-            <li>Los estilos los has de realizar tú misma.</li>
-        </ul>
+      <h2>Aquí estará la imagen de la segunda llamada</h2>
+      <Navbar />
+      <div>
+        <p className="intro-text">
+          Introduce un número para ver la foto con el ID correspondiente:  <input
+          className="id-input"
+          type="number"
+          id="id-foto"
+          placeholder="ID de la foto"
+          value={id}
+          onChange={(e) => {
+            setId(e.target.value);
+            setTitleText(`Foto ID:${e.target.value}.`);
+          }}
+        />
+        </p>
+       
+      </div>
 
-          <PictureObject/>
+      <h3 className="title-text">{titleText}</h3>
 
-    </main> 
-  )
+      <div className="image-by-id-container">
+        {imgById && (
+          <img
+            className="image-by-id"
+            src={imgById}
+            alt={`Foto con ID ${id}`}
+          />
+        )}
+      </div>
+    </main>
+  );
 }
 
-export default PicturePage
+export default PicturePage;

@@ -8,10 +8,11 @@ function GrayscalePage() {
   const [grayScaleImg, setGrayScaleImg] = useState('');
 
   const picsumService = LoremPicsumService();
+  const imgSize = '350';
 
 
   useEffect(() => {
-    picsumService.getRandomGrayscale(600)
+    picsumService.getRandomGrayscale(imgSize)
         .then (function (response){
           setGrayScaleImg(response.request.responseURL)
     
