@@ -11,14 +11,7 @@ function PicturesPage() {
     
     const [photoDB, setPhotoDB] = useState([]);// los 30 objetos   
     const picsumService = LoremPicsumService();
-    /*function respuestaOK (response) {
-            console.log(response);
-            setPhotoDB(response.data);
-           arrayPhotoDB = JSON.parse(response.data);
-
-            console.log(photoDB);
-        return arrayPhotoDB;
-    }*/
+    
 
     useEffect(() => {
         picsumService.getAll()
@@ -42,18 +35,7 @@ function PicturesPage() {
 
         <h2>Aquí estarán todos los objetos de la primera llamada</h2>
         <Navbar/>
-        <ul>
-            <p>INSTRUCCIONES</p>
-            <li>Crea los componentes que necesites para imprimir una lista o tarjetas que contengan lo siguiente (deberán estar todos los objetos de la llamada a la API):</li>
-            <ol>
-                <li>El id de la imagen.</li>
-                <li>Su autor.</li>
-                <li>La fotografía (queremos ver la imagen en nuestra app, no queremos la url).</li>
-            </ol>
-            <li>Has de borrar estas instrucciones cuando lo tengas.</li>
-            <li>Los estilos los has de realizar tú misma.</li>
-        </ul>
-
+            
         <div className="container-photo-grid">
 
         
@@ -74,14 +56,3 @@ function PicturesPage() {
 }
 
 export default PicturesPage 
-
-
-/*
- {photoDB.map((photo) => (
-            <div key={photo.id}>
-                <p>ID: {photo.id}</p>
-             <p>Author: {photo.author}</p>
-             <img src= {photo.download_url} />
-       </div>
-         ))}
-         */
