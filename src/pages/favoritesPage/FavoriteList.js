@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import FavoriteService from './FavoriteService';
+import FavoriteService from '../../services/FavoriteService';
 
 const FavoriteList = () => {
   const [favorites, setFavorites] = useState([]);

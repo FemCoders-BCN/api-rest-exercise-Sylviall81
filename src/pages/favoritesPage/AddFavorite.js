@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FavoriteService from './FavoriteService';
+import FavoriteService from '../../services/FavoriteService';
 
 const AddFavorite = ({ onAdd }) => {
   const [author, setAuthor] = useState('');

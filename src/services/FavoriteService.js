@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ENDPOINT = 'http://localhost:5000'; // Cambia esta URL según el endpoint que proporcione json-server
+const API_ENDPOINT = 'http://localhost:5000/pictures'; // Cambia esta URL según el endpoint que proporcione json-server
 
 const FavoriteService = {
   getAllFavorites: async () => {
