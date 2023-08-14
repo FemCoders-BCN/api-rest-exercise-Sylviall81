@@ -9,7 +9,7 @@ function PicturePage() {
   const [imgById, setImgById] = useState("");
   const [titleText, setTitleText] = useState("");
 
-  const imgSize = "400";
+  const imgSize = "350";
 
   useEffect(() => {
     if (!id) {

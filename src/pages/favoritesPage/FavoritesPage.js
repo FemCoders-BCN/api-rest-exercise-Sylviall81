@@ -1,7 +1,16 @@
-import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import React, { useState } from 'react';
+import FavoriteList from './FavoriteList';
+import AddFavorite from './AddFavorite';
 
 function FavoritesPage() {
+
+  const [favorites, setFavorites] = useState([]);
+
+  const handleAddFavorite = (addedFavorite) => {
+    setFavorites([...favorites, addedFavorite]);
+  };
+
   return (
     <main>
         <h2>Aquí estará la página principal donde guardarás tus objetos favoritos</h2>
@@ -25,6 +34,13 @@ function FavoritesPage() {
             <li>Has de borrar estas instrucciones cuando lo tengas.</li>
             <li>Los estilos los has de realizar tú misma.</li>
         </ul>
+        <div>
+
+      <h1>App de Favoritos</h1>
+      <AddFavorite onAdd={handleAddFavorite} />
+      <FavoriteList favorites={favorites} />
+    </div>
+
     </main>
   )
 }
