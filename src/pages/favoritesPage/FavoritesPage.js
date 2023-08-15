@@ -1,6 +1,6 @@
 import Navbar from '../../components/navbar/Navbar'
 import React, { useState } from 'react';
-import FavoriteList from './FavoriteList';
+import FavoriteList from '../../components/favoriteList/FavoriteList';
 import AddFavorite from './AddFavorite';
 
 function FavoritesPage() {
