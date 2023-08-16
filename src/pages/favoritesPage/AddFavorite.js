@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import FavoriteService from '../../services/FavoriteService';
 
 const AddFavorite = ({ onAdd }) => {
@@ -33,4 +33,4 @@ const AddFavorite = ({ onAdd }) => {
   );
 };
 
-export default AddFavorite;
+export default AddFavorite;*/

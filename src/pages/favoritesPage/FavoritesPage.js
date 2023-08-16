@@ -1,15 +1,44 @@
 import Navbar from '../../components/navbar/Navbar'
-import React, { useState } from 'react';
-import FavoriteList from '../../components/favoriteList/FavoriteList';
-import AddFavorite from './AddFavorite';
+import React, { useState, useEffect} from 'react';
+/*import FavoriteList from '../../components/favoriteList/FavoriteList';*/
+/*import AddFavorite from './AddFavorite';*/
+import { FavoriteService } from '../../services/FavoriteService';
 
 function FavoritesPage() {
 
-  const [favorites, setFavorites] = useState([]);
+  /*const [favorites, setFavorites] = useState([]);
 
   const handleAddFavorite = (addedFavorite) => {
     setFavorites([...favorites, addedFavorite]);
-  };
+
+  }*/;
+
+
+  const [favorites, setFavorites] = useState([]);
+  const favService = FavoriteService();
+
+  useEffect(() => {
+
+    favService.getAllFavorites()
+    .then (function (response){
+      console.log(response);
+      setFavorites(response.data);
+  })
+  .catch(function (error) {    
+    console.log(error);
+    })
+    .finally(function () {
+
+    });
+// El código aquí se ejecutará después de *cada* renderizado
+}, []);
+
+
+
+
+
+
+
 
   return (
     <main>
@@ -37,8 +66,24 @@ function FavoritesPage() {
         <div>
 
       <h1>App de Favoritos</h1>
-      <AddFavorite onAdd={handleAddFavorite} />
-      <FavoriteList favorites={favorites} />
+
+      <div>
+      <h2>Favoritos</h2>
+      <ul>
+        {favorites.map((favorite) => (
+          <li key={favorite.id}>
+            <p>Autor: {favorite.author}</p>
+            <img src={favorite.image} alt={favorite.author} />
+            <button>Actualizar</button>
+            <button>Eliminar</button>
+            </li>
+        ))}
+      </ul>
+    </div>
+
+
+      {/*<AddFavorite onAdd={handleAddFavorite} />*/}
+      
     </div>
 
     </main>

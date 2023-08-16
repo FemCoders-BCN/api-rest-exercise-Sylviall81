@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import PictureObject from '../../components/pictureObject/PictureObject'
-import { LoremPicsumService } from '../../services/LoremPicsumService'
+import {LoremPicsumService } from '../../services/LoremPicsumService'
+import {FavoriteService} from '../../services/FavoriteService';
 import './PicturesPage.css'
 
 
@@ -9,8 +10,12 @@ import './PicturesPage.css'
 
 function PicturesPage() {
     
-    const [photoDB, setPhotoDB] = useState([]);// los 30 objetos   
+    const [photoDB, setPhotoDB] = useState([]);// los 30 objetos   que vienen desde picsumService
     const picsumService = LoremPicsumService();
+    
+    const favService = FavoriteService();
+    const [author, setAuthor] = useState('');
+    const [photo, setPhoto] = useState(''); //El objeto individual 
     
 
     useEffect(() => {
@@ -29,7 +34,18 @@ function PicturesPage() {
         // El código aquí se ejecutará después de *cada* renderizado
     }, []);
 
-   
+
+    const AddFavorite = ({ onAdd }) => {
+      
+      const handleAdd = async () => {
+        const newFavorite = { author, photo } ;
+        const addedFavorite = favService.addNewFavorite(newFavorite);
+        onAdd(addedFavorite);
+        setAuthor('');
+        setPhoto('');
+      };
+
+
   return (
     <main>
 
@@ -47,7 +63,9 @@ function PicturesPage() {
             download_url= {photo.download_url} />
        
          ))}
-
+            
+            <button onClick={handleAdd}>Agregar</button>
+         
          </div>
 
 
@@ -55,4 +73,4 @@ function PicturesPage() {
   )
 }
 
-export default PicturesPage 
+export default PicturesPage

@@ -18,14 +18,13 @@ function PictureObject(props) {
                             <p className="text-author">Autor:{props.author}</p>
                   
                   </div>
+
+                  <button className = "fav-button">Añadir a favoritos</button>
                 </div> 
           
-              
       </div>
                      
-            
     )
 }
       
-
 export default PictureObject
