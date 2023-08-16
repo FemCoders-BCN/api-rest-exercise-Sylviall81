@@ -36,10 +36,6 @@ function FavoritesPage() {
 
 
 
-
-
-
-
   return (
     <main>
         <h2>Aquí estará la página principal donde guardarás tus objetos favoritos</h2>

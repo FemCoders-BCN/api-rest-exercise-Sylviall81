@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import PictureObject from '../../components/pictureObject/PictureObject'
 import {LoremPicsumService } from '../../services/LoremPicsumService'
-import {FavoriteService} from '../../services/FavoriteService';
+/*import {FavoriteService} from '../../services/FavoriteService';*/
 import './PicturesPage.css'
 
 
@@ -13,9 +13,9 @@ function PicturesPage() {
     const [photoDB, setPhotoDB] = useState([]);// los 30 objetos   que vienen desde picsumService
     const picsumService = LoremPicsumService();
     
-    const favService = FavoriteService();
+    /*const favService = FavoriteService();
     const [author, setAuthor] = useState('');
-    const [photo, setPhoto] = useState(''); //El objeto individual 
+    const [photo, setPhoto] = useState(''); //El objeto individual */
     
 
     useEffect(() => {
@@ -34,6 +34,7 @@ function PicturesPage() {
         // El código aquí se ejecutará después de *cada* renderizado
     }, []);
 
+    /*
 
     const AddFavorite = ({ onAdd }) => {
       
@@ -44,7 +45,7 @@ function PicturesPage() {
         setAuthor('');
         setPhoto('');
       };
-
+    }*/
 
   return (
     <main>
@@ -64,7 +65,7 @@ function PicturesPage() {
        
          ))}
             
-            <button onClick={handleAdd}>Agregar</button>
+            {/*<button onClick={handleAdd}>Agregar</button>*/}
          
          </div>
 
