@@ -3,6 +3,7 @@ import React, { useState, useEffect} from 'react';
 /*import FavoriteList from '../../components/favoriteList/FavoriteList';*/
 /*import AddFavorite from './AddFavorite';*/
 import { FavoriteService } from '../../services/FavoriteService';
+import './FavoritesPage.css'
 
 function FavoritesPage() {
 
@@ -69,7 +70,7 @@ function FavoritesPage() {
         {favorites.map((favorite) => (
           <li key={favorite.id}>
             <p>Autor: {favorite.author}</p>
-            <img src={favorite.image} alt={favorite.author} />
+            <img className = "fav-img" src={favorite.download_url} alt={favorite.author} />
             <button>Actualizar</button>
             <button>Eliminar</button>
             </li>
