@@ -10,17 +10,11 @@ axios.defaults.headers.post['Accept'] = 'application/json'; */
 
 export const FavoriteService = () => {
   
-
    const urlPicturesDB = 'http://localhost:5000/pictures';
-  //Los endpoints que tienen llaves con un texto dentro, quiere decir que le has de pasar algún valor /id/{image}/{size}, eso significa que image y size son valores que te dirá la documentación cómo se pasan.
-  /*const urlGetById = '/id/';
-  //Construye la url para el tercer endpoint
-  const urlGetGrayscale = '?grayscale';*/
-
+  
   const getAllFavorites = () => {
-    const response = axios.get(urlPicturesDB);//No estoy segura q esto sea asi xq 
+    const response = axios.get(urlPicturesDB);
     return response;
-
   };
 
   /*const addNewFavorite = (newFavorite) => {

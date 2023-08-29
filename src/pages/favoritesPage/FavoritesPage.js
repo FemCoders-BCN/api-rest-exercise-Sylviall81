@@ -7,9 +7,7 @@ import './FavoritesPage.css'
 
 function FavoritesPage() {
 
-  /*const [favorites, setFavorites] = useState([]);
-
-  const handleAddFavorite = (addedFavorite) => {
+  /* const handleAddFavorite = (addedFavorite) => {
     setFavorites([...favorites, addedFavorite]);
 
   }*/;
@@ -43,7 +41,8 @@ function FavoritesPage() {
         <Navbar/>
         <ul>
             <p>INSTRUCCIONES</p>
-            <li>Crea un servicio llamado FavoriteService.js siguiendo el ejemplo de LoremPicsumService.js, que contenga toda la lógica que necesites para realizar el CRUD, usando axios, tu endpoint será el que te proporcione el json-server.</li>
+            <li>Crea un servicio llamado FavoriteService.js siguiendo el ejemplo de LoremPicsumService.js, que contenga toda la lógica 
+              que necesites para realizar el CRUD, usando axios, tu endpoint será el que te proporcione el json-server.</li>
             <li>Para tener un servidor encendido que te permita hacer un CRUD con tu pseudo base de datos, has de activar tu json-server en un puerto diferente al que tienes de node donde funciona tu aplicación de react, esto lo haces con el siguiente comando: json-server --watch src/assets/data/picturesDB.json --port 5000</li>
             <li>Una vez encendido, en tu terminal te indicará el endpoint que usarás, donde dice Resources.</li>
             <li>Si estás cansada de ejecutar toda esa línea de código cada vez que tengas que encender el servidor de json-server, puedes ponerlo en tu package.json en la sección de scripts, con un nombre que tú le des y luego podrás ejecutar el comando npm run nombre-del-script</li>
@@ -68,6 +67,7 @@ function FavoritesPage() {
       <h2>Favoritos</h2>
       <ul>
         {favorites.map((favorite) => (
+
           <li key={favorite.id}>
             <p>Autor: {favorite.author}</p>
             <img className = "fav-img" src={favorite.download_url} alt={favorite.author} />
